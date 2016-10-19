@@ -13,9 +13,24 @@ class Comment < ActiveRecord::Base
 end
 
 get '/' do
+  @posts = Post.all
+
   erb :index
 end
 
 get '/new' do
+  @p = Post.new
   erb :new
+end
+
+post '/new' do
+  #@p = Post.new params[:content]
+  #@p.save
+  #puts '!'*999
+  #puts params[:content]
+  #puts params
+
+  #@p = Post.create content: params[:content]
+  @p = Post.create  params
+
 end
