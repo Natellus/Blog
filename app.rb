@@ -24,13 +24,14 @@ get '/new' do
 end
 
 post '/new' do
-  #@p = Post.new params[:content]
-  #@p.save
-  #puts '!'*999
-  #puts params[:content]
-  #puts params
+  content = params[:content]
+  if content.length <=0
+    @error = 'Type your text'
+    return erb :new
+  end
 
   #@p = Post.create content: params[:content]
   @p = Post.create  params
+  redirect to '/'
 
 end
