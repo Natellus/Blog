@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20161019130203) do
     t.integer "post_id"
   end
 
-  create_table "post", force: :cascade do |t|
+  create_table "posts", force: :cascade do |t|
     t.date "date_created"
     t.text "content"
   end
